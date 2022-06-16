@@ -10,7 +10,7 @@ import {PhotosModule} from "./shared/photo/photo.module";
   ],
   imports: [
     BrowserModule,
-    PhotosModule
+    PhotosModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

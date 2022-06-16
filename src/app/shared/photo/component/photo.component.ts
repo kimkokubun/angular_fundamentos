@@ -8,7 +8,7 @@ import {Component, Input, OnInit} from '@angular/core';
 export class PhotoComponent {
 
   @Input() url: any;
-  description = "Leao"
+  @Input() description: any;
   // url = "https://www.infoescola.com/wp-content/uploads/2017/04/leao-126767138.jpg";
 
   constructor() {

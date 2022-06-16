@@ -1,2 +1,1 @@
-<app-photo url="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Lion_waiting_in_Namibia.jpg/280px-Lion_waiting_in_Namibia.jpg"></app-photo>
-<app-photo url="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Okonjima_Lioness.jpg/280px-Okonjima_Lioness.jpg"></app-photo>
+<app-photo *ngFor="let photo of photos" [url]='photo.url' [description]="photo.description"></app-photo>

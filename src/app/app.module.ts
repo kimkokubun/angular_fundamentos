@@ -13,8 +13,7 @@ import {RouterModule} from "@angular/router";
   imports: [
     BrowserModule,
     PhotosModule,
-    AppRoutingModule,
-    RouterModule
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

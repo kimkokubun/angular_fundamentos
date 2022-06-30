@@ -9,11 +9,10 @@ import {debounceTime, Subject} from "rxjs";
   templateUrl: './photo-list.component.html',
   styleUrls: ['./photo-list.component.css']
 })
-export class PhotoListComponent implements OnInit, OnDestroy {
+export class PhotoListComponent {
 
   photos: Photo[] = [];
   filter: string = '';
-  debounce: Subject<string> = new Subject<string>();
   hasMore: boolean = true;
   currentPage: number = 1;
   userName: string = '';
@@ -22,12 +21,6 @@ export class PhotoListComponent implements OnInit, OnDestroy {
               private photoService: PhotoService) {
   }
 
-  ngOnInit(): void {
-    this.userName = this.activatedRoute.snapshot.params['userName'];
-    this.photos = this.activatedRoute.snapshot.data['photos'];
-    this.debounce.pipe(debounceTime(300))
-      .subscribe(filter => this.filter = filter);
-  }
 
   load() {
     this.photoService.listFromUserPaginated(this.userName, ++this.currentPage).subscribe(photos => {
@@ -37,7 +30,4 @@ export class PhotoListComponent implements OnInit, OnDestroy {
 
   }
 
-  ngOnDestroy(): void {
-    this.debounce.unsubscribe();
-  }
 }

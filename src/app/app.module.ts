@@ -6,6 +6,7 @@ import {PhotosModule} from "./photo/photo.module";
 import {AppRoutingModule} from "./app.routing.module";
 import {RouterModule} from "@angular/router";
 import {FormsModule} from "@angular/forms";
+import {CardComponent} from "./shared/components/card/card.component";
 
 @NgModule({
   declarations: [
@@ -15,7 +16,7 @@ import {FormsModule} from "@angular/forms";
     BrowserModule,
     PhotosModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

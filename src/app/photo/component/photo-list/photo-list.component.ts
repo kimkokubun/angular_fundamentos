@@ -9,7 +9,7 @@ import {debounceTime, Subject} from "rxjs";
   templateUrl: './photo-list.component.html',
   styleUrls: ['./photo-list.component.css']
 })
-export class PhotoListComponent {
+export class PhotoListComponent implements OnInit{
 
   photos: Photo[] = [];
   filter: string = '';
@@ -23,11 +23,16 @@ export class PhotoListComponent {
 
 
   load() {
+    this.filter = ''
     this.photoService.listFromUserPaginated(this.userName, ++this.currentPage).subscribe(photos => {
       this.photos = this.photos.concat(photos)
       if (!photos.length) this.hasMore = false;
     });
+  }
 
+  ngOnInit() {
+    this.userName = this.activatedRoute.snapshot.params['userName'];
+    this.photos = this.activatedRoute.snapshot.data['photos'];
   }
 
 }

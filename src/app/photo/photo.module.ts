@@ -11,10 +11,11 @@ import { FilterByDescriptionPipe } from './component/photo-list/filter-by-descri
 import { LoadButtonComponent } from './component/photo-list/load-button/load-button.component';
 import {CardModule} from "../shared/components/card/card.module";
 import {SearchModule} from "./component/photo-list/search/search.module";
+import {DarkenOnHoverModule} from "../shared/directives/darken-on-hover/darken-on-hover.module";
 
 @NgModule({
   declarations: [PhotoComponent, PhotoListComponent, PhotoFormComponent, PhotosComponent, FilterByDescriptionPipe, LoadButtonComponent],
-    imports: [HttpClientModule, CommonModule, FormsModule, CardModule, SearchModule],
+    imports: [HttpClientModule, CommonModule, FormsModule, CardModule, SearchModule, DarkenOnHoverModule],
 })
 export class PhotosModule {
 
